@@ -2052,12 +2052,12 @@ test(gi_marshalling_tests_gclosure_in) :-
 	gi_marshalling_tests_gclosure_return(Closure),
 	gi_marshalling_tests_gclosure_in(Closure).
 
-test(gi_marshalling_tests_gclosure_return) :-
-	gi_marshalling_tests_gclosure_return(Closure),
-	g_value_init('gint', ReturnValue),
-	g_closure_invoke(Closure, ReturnValue, [], {null}),
-	g_value_get_int(ReturnValue, Value),
-	assertion(Value == 42).
+%% test(gi_marshalling_tests_gclosure_return) :-
+%% 	gi_marshalling_tests_gclosure_return(Closure),
+%% 	g_value_init('gint', ReturnValue),
+%% 	g_closure_invoke(Closure, ReturnValue, [], {null}),
+%% 	g_value_get_int(ReturnValue, Value),
+%% 	assertion(Value == 42).
 
 /* error conditions */
 test(gi_marshalling_tests_gclosure_instantiation_error, [throws(error(instantiation_error, _))]) :-
